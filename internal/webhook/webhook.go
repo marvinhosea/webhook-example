@@ -30,8 +30,8 @@ func (c *Client) Send(payload *models.Payload) error {
 		return err
 	}
 	request.Header.Add("Content-Type", "application/json")
-	request.Header.Add("X-PayScaratec-Verification", "0014716e-392c-4120-609e-555e295faff5")
-	request.Header.Add("User-Agent", "PayScaratec-http-client/1.1")
+	request.Header.Add("X-Webhook-Verification", "0014716e-392c-4120-609e-555e295faff5")
+	request.Header.Add("User-Agent", "UserAgent-http-client/1.1")
 	res, err := c.httpClient.Do(request)
 	defer res.Body.Close()
 	if err != nil {
